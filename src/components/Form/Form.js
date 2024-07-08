@@ -37,7 +37,7 @@ function Username({ control, serverError, onChange, required = true }) {
   return (
     <Input
       label="Username"
-      placeholder="Username"
+      placeholder="Username(не должен быть пустым)"
       fieldProps={field}
       error={fieldState.invalid || serverError}
       warrning={warrning}
@@ -60,7 +60,7 @@ function Email({ control, serverError, onChange, required = true }) {
   return (
     <Input
       label="Email address"
-      placeholder="Email address"
+      placeholder="Email(введи корректный почтовый адрес)"
       fieldProps={field}
       error={fieldState.invalid || serverError}
       warrning={warrning}
@@ -89,7 +89,7 @@ function Password({
   return (
     <Input
       label={label}
-      placeholder={label}
+      placeholder='password(должен быть от 6 до 40 символом)'
       fieldProps={{ ...field, type: 'password' }}
       error={fieldState.invalid}
       warrning={fieldState.invalid && warrning}

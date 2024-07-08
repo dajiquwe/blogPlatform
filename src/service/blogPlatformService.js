@@ -13,7 +13,7 @@ export default class blogPlatformService {
 
   static getArticlesList = async (page = 1, token) =>
     await this.#customFetch(
-      `articles?limit=5&offset=${0 + (page - 1) * 5}`,
+      `articles?limit=5&offset=${0 + (localStorage.getItem('test') - 1) * 5}`,
       token && {
         headers: {
           Authorization: `Token ${token}`,

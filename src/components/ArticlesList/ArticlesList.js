@@ -20,11 +20,11 @@ function ArticlesList() {
   const error = useSelector((state) => state.articlesList.error);
 
   useEffect(() => {
-    dispatch(getArticlesList({ pageNumber: 1, token: isAuthorized ? token : null }));
+    dispatch(getArticlesList({ pageNumber: localStorage.getItem('test'), token: isAuthorized ? token : null }));
   }, [isAuthorized]);
 
   useEffect(() => {
-    dispatch(togglePage(1));
+    dispatch(togglePage(localStorage.getItem('test')));
   }, [history]);
 
   if (!articles) return <Loader />;

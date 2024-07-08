@@ -27,6 +27,15 @@ import {
   SIGNUP,
 } from '../../routing_paths';
 
+if (localStorage.getItem('test') === null) {
+  localStorage.setItem('test', 1);
+}
+else {
+  console.log(localStorage.getItem('test'))
+}
+
+// console.log(localStorage.getItem('look'));
+
 function App() {
   const dispatch = useDispatch();
 

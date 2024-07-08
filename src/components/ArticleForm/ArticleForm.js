@@ -46,6 +46,7 @@ const ArticleForm = ({
       <label>Title</label>
       <input
         placeholder={errors?.title ? 'Requied' : 'Important Article Title'}
+        pattern="[\w]{1,15}"
         {...register('title', {
           required: true,
         })}
@@ -61,6 +62,7 @@ const ArticleForm = ({
         {...register('description', {
           required: true,
         })}
+        pattern="[\w]{1,15}"
         className={errors?.description ? classes.invalid : undefined}></input>
 
       <label>Text</label>
@@ -78,6 +80,7 @@ const ArticleForm = ({
           return (
             <li key={tag.id}>
               <input
+                pattern="[\w]{1,15}"
                 placeholder={errors?.tagList ? 'Requied' : 'Tag'}
                 {...register(`tagList[${index}]`, {
                   required: true,

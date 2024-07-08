@@ -10,20 +10,26 @@ function Pagination({ token }) {
     Math.ceil(state.articlesList.totalArticles / 5)
   );
   const currentPage = useSelector((state) => state.articlesList.currentPage);
+  // console.log(currentPage);
 
   if (!totalPages) return null;
 
   const pageNumbersButtons = [];
+  // console.log(localStorage.getItem('test'));
 
   const onClick = (number, condition) =>
     condition
       ? () => {
-          dispatch(togglePage(number));
+          localStorage.setItem('test', number);
+          // console.log(localStorage.getItem('test'));
+          console.log(currentPage);
+          dispatch(togglePage(localStorage.getItem('test')));
           dispatch(
-            getArticlesList({ pageNumber: number, token: token || null })
+            getArticlesList({ pageNumber: localStorage.getItem('test'), token: token || null })
           );
         }
       : undefined;
+    
 
   const addButton = (number) => {
     pageNumbersButtons.push(
